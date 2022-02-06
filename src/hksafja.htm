@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Web Officiel de l'ONEE - Branche Electricité | Simulation de la facture</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/normalize.css" rel="stylesheet" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="css/jquery-ui.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+
+  <link href="img/favicon.jpg" rel="shortcut icon" type="image/x-icon" />
+  <style type="text/css">
+    .sidebar .sidebar-menu a {
+      text-align: left;
+    }
+
+    .list-aggregate li a {
+      float: none;
+    }
+
+    .right-sidebar {
+      display: none !important;
+    }
+
+    .content-page {
+      width: 100% !important;
+      padding: 0 !important;
+      padding-bottom: 100px !important;
+    }
+
+    .content-page h1 {
+      font-size: 14px;
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+      color: #990000;
+      font-family: verdana;
+      font-weight: bold;
+      line-height: 20px;
+    }
+
+    .interne-content .content-page .page-title {
+      padding-left: 25px;
+    }
+
+    .has-submenu {
+      color: #F4F4F4;
+      float: right;
+    }
+
+    .container {
+      width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+      min-width: 1200px;
+      max-width: 1200px;
+    }
+  </style>
+  <!--[if lte IE 9]>
+               <style>
+              .interne-content .left-sidebar {
+              position:relative;
+        bottom : 0;
+              }
+              .GridView {
+                border:1px solid !important;
+                }
+               </style>
+            <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div class="alert alert-warning text-center alert-version">
+  <span class="close-alert" data-dismiss="alert" onclick="this.parentNode.style.display = 'none';" aria-label="close">Fermer</span>
+  Votre navigateur a besoin d'être mise à jour, afin de profiter de toutes fonctionnalités du site Télecharger :<br>
+  <a href="http://windows.microsoft.com/ie"> <u>Internet Explorer</u> </a> Ou
+  <a href="http://www.google.com/chrome"><u>Google Chrome</u> </a> Ou
+  <a href="http://www.firefox.com/"><u>Mozilla Firefox</u> </a>Ou
+  <a href="http://www.apple.com/safari"><u>Safari</u> </a>
+</div>
+<![endif]-->
+  <div class="header">
+    <div class="row">
+      <div class="container">
+        <div class="col-xs-3 carre">
+          <img src="img/logopilone.jpg" class="pull-right img-responsive" style="height: 135px;width: 290px;"
+            alt="Bann_accueil">
+        </div>
+        <div class="col-xs-9 carre">
+          <a href="/">
+            <img src="img/Banniere_accueil_900-150.gif" style="height: 140px;" class="pull-right img-responsive"
+              alt="Bann_accueil">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row menu-row">
+    <div class="container">
+      <div class="menu">
+        <p class="date-interne">Date d'aujourd'hui</p>
+        <ul>
+          <li>
+            <a href="/FR/pages/index.asp">Accueil</a>
+          </li>
+          <li>
+            <a href="/FR/stageone/">St@ge ONEE</a>
+          </li>
+          <li>
+            <a href="/FR/pages/reclam.asp?esp=3&id1=12&id2=78&t1=1&t2=1">Contact</a>
+          </li>
+          <li>
+            <a href="/FR/pages/photo.asp?esp=2&id1=8&id2=76&t1=1&t2=1">Photothèque</a>
+          </li>
+          <li>
+            <a href="/FR/pages/plan.asp?esp=3&id1=13&id2=99&t2=1">Plan du site</a>
+          </li>
+
+          <li>
+            <form class="pull-right" method="post"><input type="hidden" name="nccharset" value="511383E5">
+              <input type="text" class="form-control" name="" placeholder="Rechercher" value="">
+              <input type="submit" name="" value="OK">
+            </form>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="interne-content">
+    <div class="row">
+      <div class="container">
+
+        <table class="table">
+
+          <td class="col-xs-12 content-page page-facturebt">
+            <h3 class="page-title" id="pageTitle">Basse Tension Classique (BTC)</h3>
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item niv1">
+                  <a href="index.html">•¬ Simulez votre facture</a>
+                </li>
+              </ol>
+            </nav>
+
+
+            <div class="facture">
+
+              <div class="row hidden-xs">
+                <div class="col-md-12">
+                  <img src="img/Logo_crc.jpg" width="250" alt="" class="img-responsive animated flash"
+                    style="position: absolute;">
+                  <img src="img/onee-logo.png" alt="" class="img-responsive col-xs-4 col-sm-offset-4 img-logo">
+                </div>
+              </div>
+              <div class="row visible-xs">
+                <div class="col-xs-6">
+                  <img src="img/Logo_crc.jpg" width="350" alt="" class="img-responsive animated flash">
+
+                </div>
+                <div class="col-xs-6">
+                  <img src="img/onee-logo.png" alt="" class="img-responsive img-logo">
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <div class="post-it-note hidden animated fadeIn">
+                <i class="fa fa-close"></i>
+                <p></p>
+              </div>
+              <table class="table">
+                <tr>
+                  <td class="text-left titre-blue-lg">Facture d'électricité simulée</td>
+                  <td></td>
+                  <td class="text-right titre-blue-lg ar-size-lg ar-font-lg"> فـاتـورة الـكـهـربـاء
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <div class="alert alert-danger text-center h5 alert-index" style="padding: 5px;">
+                      <a href="#" class="text-danger">
+                        <strong>Veuillez sélectionner le TARIF et le TYPE DE COMPTEUR !</strong>
+                        <i class="fa fa-hand-o-down fa-2x"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-left">Tarif : </td>
+                  <td width="240">
+                    <select class="form-control" name="selectTarif" id="selectTarif">
+                      <option value="0" selected>Choisir</option>
+                      <option value="1">Domestique ou éclairage privé</option>
+                      <option value="2">Patenté</option>
+                      <option value="3">Force Motrice Industrielle</option>
+                      <option value="4">Force Motrice Agricole</option>
+                    </select>
+
+                  </td>
+                  <td class="text-right ar-size ar-font"><a class="fa fa-refresh fa-2x text-left" aria-hidden="true"
+                      style="position: relative;
+                                        right: 25px;cursor: pointer;"></a>
+                    <i class="fa fa-question-circle text-left"
+                      style="position: relative; right: 15px;font-size: 24px !important;" aria-hidden="true"
+                      data-toggle="popover" tabindex="0" role="button" data-trigger="focus"
+                      title="Rafraîchissement de la page"
+                      data-content="Pour changer le tarif, il vous suffit de cliquer sur le bouton « Rafraichir »"></i>
+                    : التعريفة
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-left">Type de compteur : <i class="fa fa-question-circle" aria-hidden="true"
+                      data-toggle="popover" tabindex="0" role="button" data-trigger="focus" title="Type de compteur"
+                      data-content="Il s’agit du type de compteur mis à votre disposition."></i>
+                  </td>
+                  <td width="240">
+                    <select class="form-control" name="selectCompteur" id="selectCompteur">
+                      <option value="0">Choisir</option>
+                      <option value="1">2 Fils</option>
+                      <option value="2">4 Fils 5-15 Ampères</option>
+                      <option value="3">4 Fils 20-60 Ampères ou 10-60 Ampères</option>
+                    </select>
+                  </td>
+                  <td class="text-right ar-size ar-font"> : نوع العداد</td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <div class="alert alert-info text-center h5 alert-tc hidden" style="padding: 5px;">
+                      <a href="#" class="text-info">
+                        <strong>Veuillez préciser si vous êtes équipés d’un transformateur de
+                          courant.</strong>
+                        <i class="fa fa-hand-o-down fa-2x"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="trTC">
+                  <td class="text-left" style="font-size: 1.2em;">Transformateur de Courant(TC) :
+
+                  </td>
+                  <td width="240">
+                    <div class="radio tc-radio">
+                      <label>
+                        <input type="radio" name="rad" id="radoui" disabled="disabled" value="option1">Oui
+                      </label>
+                    </div>
+                    <div class="radio tc-radio">
+                      <label>
+                        <input type="radio" name="rad" id="radnon" disabled="disabled" value="option2" checked>Non
+                      </label>
+                    </div>
+                  </td>
+                  <td class="text-right ar-size ar-font"></td>
+                </tr>
+
+                <tr>
+                  <td colspan="3">
+                    <div class="alert alert-danger text-center h5 alert-consomEstimee hidden" style="padding: 5px;">
+                      <a href="#" class="text-danger">
+                        <strong>Veuillez saisir la consommation estimée !</strong>
+                        <i class="fa fa-hand-o-down fa-2x"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="trConsomEstimee hidden">
+                  <td class="text-left" style="font-size: 1.2em;">Consommation estimée (KWh): <i
+                      class="fa fa-question-circle" aria-hidden="true" data-toggle="popover" tabindex="0" role="button"
+                      data-trigger="focus" title="Consommation estimée"
+                      data-content="C’est la consommation estimée figurant au niveau de votre dernière facture estimée."></i>
+                  </td>
+                  <td width="240">
+                    <!-- <input type="text" class="form-control" placeholder="Saisir ici ..." name="consomEstimee" id="consomEstimee"> -->
+                    <input type="number" min="0" class="form-control text-center" placeholder="Saisir ici ..."
+                      name="consomEstimee" id="consomEstimee" value="0">
+                  </td>
+                  <td class="text-right ar-size ar-font"> : الاستهلاك التقديري</td>
+                </tr>
+              </table>
+              <br>
+              <br>
+              <!-- <br>
+                            <br>
+                            <h4 id="rcestimereelle"></h4>
+                            <h4 id="rc_duePeriode"></h4>
+                            <h4 id="rcE"></h4>
+                            <h4 id="tppaE"></h4>
+                            <h4 id="rc_duePeriode"></h4> -->
+              <div class="post-it-note2 hidden animated fadeIn">
+                <i class="fa fa-close"></i>
+                <p></p>
+              </div>
+              <table class="table table-total">
+                <tr>
+                  <td width="" class="titre-blue-sm">Total à régler (DH TTC) :</td>
+                  <td width="240">
+                    <p class="text-center border-jaune" id="totalRegler">00.00</p>
+                  </td>
+                  <td class="text-right titre-blue-sm ar-size ar-font"> : الواجب أداؤه </td>
+                </tr>
+                <tr>
+                  <td>Dont total taxes :</td>
+                  <td>
+                    <p class="text-center" id="totalTaxe">00.00</p>
+                  </td>
+                  <td class="text-right ar-size ar-font"> : مجموع الرسوم </td>
+                </tr>
+
+              </table>
+              <br>
+              <br>
+              <br>
+              <div class="alert alert-danger col-sm-4 col-sm-offset-3 text-center h5 alert-indextypereleve hidden"
+                style="padding: 5px">
+                <a class="text-danger">
+                  <i class="fa fa-hand-o-down fa-2x"></i>
+                  <strong>Veuillez sélectionner le type de relevé !</strong>
+                </a>
+              </div>
+              <div class="alert alert-danger col-sm-4 pull-right text-center h5 alert-tc-consom hidden"
+                style="padding: 5px">
+                <a class="text-danger">
+                  <strong>Veuillez saisir votre rapport TC</strong>
+                  <i class="fa fa-hand-o-down fa-2x"></i>
+                </a>
+              </div>
+              <div class="alert alert-danger col-sm-6 col-sm-offset-3 text-center h5 alert-indexes hidden"
+                style="padding: 5px">
+                <a class="text-danger">
+                  <i class="fa fa-hand-o-down fa-2x"></i>
+                  <strong>Veuillez saisir les index !</strong>
+                </a>
+              </div>
+
+              <table class="table table-bordered table-consommation">
+                <tr>
+                  <th>Compteur <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover" tabindex="0"
+                      role="button" data-trigger="focus" title="Type de compteur"
+                      data-content="Le type de compteur mis à votre disposition au moment de votre abonnement."></i>
+                  </th>
+                  <th>Type relevé</th>
+                  <th>Date</th>
+                  <th>Nouvel index <i class="fa fa-question-circle index-icon hidden" aria-hidden="true"
+                      data-toggle="popover" tabindex="0" role="button" data-trigger="focus" title="Nouvel index"
+                      data-content="C’est la valeur de votre consommation cumulée indiquée par votre compteur à la date de fin de la période de consommation concernée."></i>
+                  </th>
+                  <th>Date</th>
+                  <th>Ancien index <i class="fa fa-question-circle index-icon hidden" aria-hidden="true"
+                      data-toggle="popover" tabindex="0" role="button" data-trigger="focus" title="Ancien index"
+                      data-content="C’est la valeur de votre ancien index qui correspond à la consommation cumulée indiquée par votre compteur à la date de début de la période de consommation concernée."></i>
+                  </th>
+                  <th>Différence <i class="fa fa-question-circle index-icon hidden" aria-hidden="true"
+                      data-toggle="popover" tabindex="0" role="button" data-trigger="focus" title="Différence"
+                      data-content="C’est la différence entre votre nouvel index et votre ancien index."></i>
+                    <i class="fa fa-question-circle index-cons-estimee hidden" aria-hidden="true" data-toggle="popover"
+                      tabindex="0" role="button" data-trigger="focus" title="Différence"
+                      data-content="Il s’agit de la consommation totale du mois."></i>
+                  </th>
+                  <th>TC <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover" tabindex="0"
+                      role="button" data-trigger="focus" title="Transformateur de Courant(TC)"
+                      data-content="C’est le rapport du transformateur de courant. Il s’agit du coefficient par lequel on multiplie votre consommation mesurée par votre compteur (image du courant donnée par le transformateur) pour déterminer votre consommation réelle."></i>
+                  </th>
+                  <th>Consommation (KWh)
+                    <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover" tabindex="0" role="button"
+                      data-trigger="focus" title="Consommation (KWh)"
+                      data-content="Il s’agit de la consommation totale du mois qui tient compte du rapport du transformateur de courant (TC)."></i>
+                  </th>
+                </tr>
+
+                <tr>
+                  <td>
+                    <p id="compteur"></p>
+                  </td>
+                  <td>
+                    <select class="form-control" name="selectTypeReleve" id="selectTypeReleve" disabled="disabled">
+                      <option value="0">Choisir</option>
+                      <option value="1">Estimé</option>
+                      <option value="2">Réel</option>
+                    </select>
+                  </td>
+                  <td class="text-center" width="100">
+                    <p id="date1"></p>
+                  </td>
+                  <td width="140">
+                    <input type="number" min="0" class="form-control text-center" placeholder="Saisir ici ..."
+                      name="nouvelIndex" id="nouvelIndex" value="0" disabled="disabled">
+                  </td>
+                  <td class="text-center" min="0" width="100">
+                    <p id="date2"></p>
+                  </td>
+                  <td width="140">
+                    <input type="number" min="0" class="form-control text-center" placeholder="Saisir ici ..."
+                      name="ancienIndex" id="ancienIndex" value="0" disabled="disabled">
+                  </td>
+                  <td class="text-center" width="150">
+                    <input type="number" min="0" class="form-control text-center" placeholder="Saisir ici ..."
+                      name="difference" id="difference" value="0" disabled="disabled">
+                  </td>
+                  <td class="text-center" width="60">
+                    <!-- <p id="tc">-</p> -->
+                    <input type="number" min="1" class="form-control text-center" placeholder="" name="tc" id="tc"
+                      value="1" disabled="disabled">
+                  </td>
+                  <td width="170">
+                    <input type="number" min="0" class="form-control text-center" placeholder="Saisir ici ..."
+                      name="consommation" id="consommation" value="0" disabled="disabled">
+                  </td>
+                </tr>
+
+              </table>
+              <br>
+
+
+              <div class="alert alert-danger col-sm-4 col-sm-offset-3 text-center h5 alert-indexdate hidden"
+                style="padding: 5px">
+                <a class="text-danger">
+                  <i class="fa fa-hand-o-down fa-2x"></i>
+                  <strong>Veuillez saisir la période de consommation !</strong>
+                </a>
+              </div>
+
+              <div class="alert alert-danger col-sm-4 pull-right text-center h5 alert-consommation hidden"
+                style="padding: 5px">
+                <a class="text-danger">
+                  <i class="fa fa-hand-o-up fa-2x"></i>
+                  <strong>Veuillez saisir votre consommation !</strong>
+                </a>
+              </div>
+              <!-- 
+                            <table class="table table-bordered table-infosup">
+                                <tr>
+
+                                    <th class="text-center">Seuil d'exonération</th>
+                                    <th class="text-center">Plafond TPPA HT</th>
+                                    <th class="text-center">TPPA Due</th>
+                                    <th class="text-center">14% RC</th>
+                                    <th class="text-center">20% TPPA</th>
+                                    <th class="text-center">20% Entretien</th>
+                                    <th class="text-center">7% Location</th>
+                                    <th class="text-center">Nbr Jours estimée</th>
+                                    <th class="text-center">Nbr Jours Réelle</th>
+                                    <th class="text-center">Seuil de Sélectivité</th>
+                                    <th class="text-center">consomJournaliere</th>
+                                </tr>
+                                <tr>
+                                    <td class="text-center" id="seuilExoneration"></td>
+                                    <td class="text-center" id="plafondtppa"></td>
+                                    <td class="text-center" id="tppadue"></td>
+                                    <td class="text-center" id="tvarc"></td>
+                                    <td class="text-center" id="tvatppa"></td>
+                                    <td class="text-center" id="tvaentretien"></td>
+                                    <td class="text-center" id="tvalocation"></td>
+                                    <td class="text-center" id="nbrjrsEstimee"></td>
+                                    <td class="text-center" id="nbrjrsReelle"></td>
+                                    <td class="text-center" id="seuilSelectivite"></td>
+                                    <td class="text-center" id="consomJournaliere"></td>
+                                </tr>
+                            </table> -->
+              <!-- 
+                            <br>
+                            <table class="table table-bordered table-infosup">
+                                <tr>
+                                    <th class="text-center">Seuil d'exonération</th>
+                                    <th class="text-center">Plafond TPPA HT</th>
+                                    <th class="text-center">TPPA Due</th>
+                                    <th class="text-center">14% RC</th>
+                                    <th class="text-center">20% TPPA</th>
+                                    <th class="text-center">20% Entretien</th>
+                                    <th class="text-center">7% Location</th>
+                                    <th class="text-center">Nbr Jours Periode</th>
+                                    <th class="text-center">Seuil de Sélectivité</th>
+                                </tr>
+                                <tr>
+                                    <td class="text-center" id="seuilExonerationR"></td>
+                                    <td class="text-center" id="plafondtppaR"></td>
+                                    <td class="text-center" id="tppadueR"></td>
+                                    <td class="text-center" id="tvarcR"></td>
+                                    <td class="text-center" id="tvatppaR"></td>
+                                    <td class="text-center" id="tvaentretieR"></td>
+                                    <td class="text-center" id="tvalocationR"></td>
+                                    <td class="text-center" id="nbrJoursPeriode"></td>
+                                    <td class="text-center" id="seuilSelectiviteR"></td>
+                                </tr>
+                            </table>
+                            <br> -->
+
+              <table class="table table-calcul">
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <th class="text-center">Quantité (kWh)</th>
+                  <th class="text-center">Prix unitaire DH (HT)</th>
+                  <th class="text-center">Montant en DH (HT)</th>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="trAcompte hidden">
+                  <th>Acompte <i class="fa fa-question-circle icon-acompte-menage hidden" aria-hidden="true"
+                      data-toggle="popover" tabindex="0" role="button" data-trigger="focus" title="Acompte"
+                      data-content="L’acompte correspond au montant de la redevance de consommation HT et la redevance TPPA HT payé au titre de votre dernière facture estimée."></i>
+                    <i class="fa fa-question-circle icon-acompte-forcemotrice hidden" aria-hidden="true"
+                      data-toggle="popover" tabindex="0" role="button" data-trigger="focus" title="Acompte"
+                      data-content="L’acompte correspond au montant de la redevance de consommation HT payée au titre de votre dernière facture estimée."></i>
+                  </th>
+
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="acompte"></td>
+                  <td></td>
+                  <td class="text-right ar-font">تسبيق</td>
+                </tr>
+                <tr>
+                  <th>Redevances Consommations <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover"
+                      tabindex="0" role="button" data-trigger="focus" title="Redevances de consommations"
+                      data-content="Votre consommation facturée par tranche de consommation dans laquelle vous vous situez."></i>
+                  </th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="text-right ar-font">مستحقات الاستهلاكات</td>
+                </tr>
+                <tr>
+                  <td width="400">
+                    <span class="pull-left">du : <i class="fa fa-question-circle" aria-hidden="true"
+                        data-toggle="popover" tabindex="0" role="button" data-trigger="focus" title="Période 1"
+                        data-content="La première période pour laquelle vous avez reçu une facture basée sur la consommation estimée. Son début correspond à la date de l’ancien index."></i>
+                      &nbsp;</span>
+                    <input type="text" value="0" name="dateDebEstimee" placeholder="cliquer ici ..." id="dateDebEstimee"
+                      class="form-control txtdate" disabled="disabled">
+                    <span class="pull-left">&nbsp;&nbsp;au :&nbsp;</span>
+                    <input type="text" value="0" name="dateFinEstimee" placeholder="cliquer ici ..." id="dateFinEstimee"
+                      class="form-control txtdate" disabled="disabled">
+                    <div id="erreurDateEstimee" class="text-center alert alert-danger"></div>
+                  </td>
+                  <td id="trancheEstimeFr"></td>
+                  <td id="qteEstime"></td>
+                  <td id="puEstime"></td>
+                  <td id="montantEstime"></td>
+                  <td id="trancheEstimeAr" class="text-right ar-font"></td>
+                  <td></td>
+                </tr>
+
+                <tr class="trDateReelle hidden">
+                  <td>
+                    <span class="pull-left">du : <i class="fa fa-question-circle" aria-hidden="true"
+                        data-toggle="popover" tabindex="0" role="button" data-trigger="focus" title="Période 2"
+                        data-content="La deuxième période pour laquelle vous avez reçu la facture dont le type de relevé est réel."></i>
+                      &nbsp;</span>
+                    <input type="text" value="0" name="dateDebReelle" placeholder="cliquer ici ..." id="dateDebReelle"
+                      class="form-control txtdate">
+                    <span class="pull-left">&nbsp;&nbsp;au :&nbsp;</span>
+                    <input type="text" value="0" name="dateFinReelle" placeholder="cliquer ici ..." id="dateFinReelle"
+                      class="form-control txtdate">
+                    <div id="erreurDateReelle" class="text-center alert alert-danger"></div>
+                  </td>
+                  <td id="trancheReelleFr"></td>
+                  <td id="qteReelle"></td>
+                  <td id="puReelle"></td>
+                  <td id="montantReelle"></td>
+                  <td id="trancheReelleAr" class="text-right ar-font"></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <th>Redevances Fixes <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover"
+                      tabindex="0" role="button" data-trigger="focus" title="Redevances fixes"
+                      data-content="Elles correspondent aux frais de location de votre compteur ainsi qu’aux frais d’entretien de votre branchement."></i>
+                  </th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="redevancesFixes"></td>
+                  <td></td>
+                  <td class="text-right ar-font">مستحقات ثابتة</td>
+                </tr>
+                <tr>
+                  <td>Total HT <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover" tabindex="0"
+                      role="button" data-trigger="focus" title="Total HT"
+                      data-content="Le total hors taxes des redevances de consommation et des redevances fixes."></i>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="totalHT"></td>
+                  <td></td>
+                  <td class="text-right ar-font">(المبلغ (د ض</td>
+                </tr>
+
+                <tr id="trTPPA">
+                  <td>TPPA <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover" tabindex="0"
+                      role="button" data-trigger="focus" title="TPPA"
+                      data-content="C’est la Taxe pour la Promotion du Paysage Audiovisuel National."></i>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="tppa"></td>
+                  <td></td>
+                  <td class="text-right ar-font">مكس إنعاش الفضاء السمعي البصري</td>
+                </tr>
+                <tr>
+                  <td>Total TVA <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover" tabindex="0"
+                      role="button" data-trigger="focus" title="title"
+                      data-content="Il représente le total de la taxe sur la valeur ajoutée appliquée sur vos redevances de consommation, sur les frais de l’entretien de votre branchement et sur les frais de location de votre compteur."></i>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="totalTVA"></td>
+                  <td></td>
+                  <td class="text-right ar-font">مجموع ض. ق. م</td>
+                </tr>
+
+                <tr>
+                  <td>Timbre fiscal <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover"
+                      tabindex="0" role="button" data-trigger="focus" title="Timbre fiscal"
+                      data-content="Il représente 0,25% du montant de votre facture en cas de paiement en espèce."></i>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="timbreFiscal"></td>
+                  <td></td>
+                  <td class="text-right ar-font">واجب الدمغة الجبائية في حالة الدفع نقدا</td>
+                </tr>
+
+                <tr>
+                  <td>Total taxes <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover" tabindex="0"
+                      role="button" data-trigger="focus" title="Total taxes"
+                      data-content="Il représente la somme du total TVA et le timbre fiscal."></i>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="totalTaxes"></td>
+                  <td></td>
+                  <td class="text-right ar-font">مجموع الرسوم</td>
+                </tr>
+
+              </table>
+
+              <br>
+              <br>
+              <br>
+              <table class="table table-bordered table-totalregler" style="table-layout:fixed">
+                <tr>
+                  <th colspan="2" class="text-center">Total à régler (DH):</th>
+                  <th colspan="2" class="text-center ar-font"> : الواجب اداؤه</th>
+                </tr>
+                <tr>
+                  <td>En espèce : <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover" tabindex="0"
+                      role="button" data-trigger="focus" title="Total à régler (En espèce)"
+                      data-content="C’est le montant à régler en cas du paiement en espèce. Il s’agit du montant de la facture qui intègre les frais du timbre fiscal qui est de 0,25% du montant de la facture."></i>
+                  </td>
+                  <td id="totalEspece" class="text-center"></td>
+                  <td>Par chèque : <i class="fa fa-question-circle" aria-hidden="true" data-toggle="popover"
+                      tabindex="0" role="button" data-trigger="focus" tabindex="0" role="button" data-trigger="focus"
+                      title="Total à régler (Par chèque)"
+                      data-content="Le montant total TTC à régler quand vous optez pour un règlement autre qu’en espèce (chèque, virement…)."></i>
+                  </td>
+                  <td id="totalcheque" class="text-center"></td>
+                </tr>
+              </table>
+              <br>
+              <br>
+
+              <div class="row">
+                <div class="alert alert-info col-sm-6 col-sm-offset-3 text-center h5">
+                  <strong>Cette simulation est donnée à titre indicatif et n'a aucune valeur
+                    contractuelle</strong>
+                </div>
+              </div>
+
+            </div>
+
+          </td>
+
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container footer-container">
+      <div class="footer">
+        <div class="col-xs-2">
+          <p>© ONEE-BE 2019</p>
+        </div>
+        <div class="col-xs-10">
+          <img src="img/Band_inf.jpg" class="img-responsive" style="width: 100%; height: 20px" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#sidebarmenu .sidebar-img').click(function () {
+        $('.list > #sidebarmenu').toggleClass("hidden");
+      });
+
+    });
+    // Change part of image src
+    $(function () {
+      $.each($('img'), function () {
+        $(this).attr("src", $(this).attr("src").replace("../../images", "/img"));
+      });
+    });
+
+    // SIDEBAR
+
+    // Rubrique Active
+    var PageURLParam = window.location.href.split("/")[4];
+    $.each($('#sidebarmenu >li>a'), function () {
+      if ($(this).attr("href").split("/")[2] == PageURLParam) {
+        $("#sidebarmenu").addClass("hidden");
+        $(this).parent('li').children('ul').slideDown();
+
+        $(this).parent().parent().removeClass("hidden");
+      }
+    });
+    $('#sidebarmenu >li.open>a').css("cursor", "pointer");
+    $('#sidebarmenu >li.open>a').on('click', function () {
+      var element = $(this).parent('li');
+      if (element.hasClass('open')) {
+        element.removeClass('open');
+        element.find('li').removeClass('open');
+      }
+      else {
+        element.addClass('open');
+        element.children('ul').slideDown();
+        element.siblings('li').children('ul').slideUp();
+        element.siblings('li').removeClass('open');
+        element.siblings('li').find('li').removeClass('open');
+        element.siblings('li').find('ul').slideUp();
+      }
+    });
+    $('#sidebarmenu li li').on("mouseover", function () {
+      $(this).addClass('open');
+      $(this).find('ul.submenu').css("display", "block");
+    });
+    $('#sidebarmenu li li').on("mouseleave", function () {
+      $(this).removeClass('open');
+      $(this).find('ul.submenu').css("display", "none");
+    });
+    $('#sidebarmenu >li.open > a').append("<span></span>");
+
+    // Fleche sous-menu
+    $('.sidebarmenu > li > ul > li').has('ul').find('>a').append('<i class="fa fa-chevron-right has-submenu"></i>');
+
+
+    var animationEnd = (function (el) {
+      var animations = {
+        "animation": "animationend",
+        "OAnimation": "oAnimationEnd",
+        "MozAnimation": "mozAnimationEnd",
+        "WebkitAnimation": "webkitAnimationEnd"
+      }
+
+      for (var t in animations) {
+        if (el.style[t] !== undefined) {
+          return animations[t]
+        }
+      }
+    })(document.createElement("fakeelement"))
+
+  </script>
+  <script>
+    $(document).ready(function () {
+      niv2 = $('.page-title').text();
+      if (niv2 != '') {
+        $('.niv2').append(niv2);
+      }
+      else {
+        // $('.niv2').append('<%: Page.Title %>');
+      }
+    });
+  </script>
+
+  <script src="js/jquery-ui.min.js"></script>
+  <script id="domestique"></script>
+  <script id="patente"></script>
+  <script id="forcemotrice"></script>
+  <script id="global"></script>
+
+  <script>
+    $('.fa-refresh').click(function () {
+      location.reload();
+    });
+
+    function loadScript(id, src) {
+      var js = document.getElementById(id);
+      if (js !== null) {
+        document.body.removeChild(js);
+      }
+      js = document.createElement("script");
+      js.src = src;
+      js.id = id;
+      document.body.appendChild(js);
+    }
+
+    $('#selectTarif').change(function () {
+      loadScript("global", "js/bt/global.js");
+
+      if ($('#selectTarif option:selected').val() == 1) {
+        loadScript("domestique", "js/bt/domestique.js");
+        $('#trTPPA').show();
+      }
+      else if ($('#selectTarif option:selected').val() == 2) {
+        loadScript("patente", "js/bt/patente.js");
+        $('#trTPPA').show();
+      }
+      else if ($('#selectTarif option:selected').val() == 3) {
+        loadScript("forcemotrice", "js/bt/forcemotrice.js");
+        $('#trTPPA').hide();
+      }
+      else if ($('#selectTarif option:selected').val() == 4) {
+        loadScript("forcemotrice", "js/bt/forcemotrice.js");
+        $('#trTPPA').hide();
+      }
+      else {
+        $('#domestique').remove();
+        $('#patente').remove();
+        $('#forcemotrice').remove();
+      }
+
+    });
+
+    // Date d'aujourdhui
+    var jours = new Array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
+    var mois = new Array("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
+    // on recupere la date
+    var date = new Date();
+
+    var message = jours[date.getDay()] + " " + date.getDate() + " " + mois[date.getMonth()] + " " + date.getFullYear();
+
+    $('.date-interne').text(message);
+
+    $(function () {
+      $('[data-toggle="popover"]').popover({
+        trigger: 'focus'
+      });
+
+    });
+
+
+    // $('[data-toggle="popover"]').on("click",function () {
+    //     //$('.popover .popover-title').css('background','red');
+    //     $('[data-toggle="popover"]').popover();
+    // });
+
+    $(document).ready(function () {
+
+      $('[data-toggle="tooltip"]').tooltip();
+
+      $(".select-dropdown-icon").on("click", function () {
+        $(".options").toggle();
+        var icon = $(this).find("i");
+        icon.toggleClass("glyphicon-chevron-down glyphicon-chevron-up");
+      });
+
+      $(".option").on("click", function () {
+        $("#selected-value").attr("value", $(this).attr("value"));
+        $(".value").text($(this).text());
+        $(".options").toggle();
+      });
+
+    });
+        // Division Communication
+  </script>
+
+</body>
+
+<a hidden
+  href="/bgXMndAVqwB2yAju0p3zWJhLu1pzurTzPBueuN4fKHM=.html">bgXMndAVqwB2yAju0p3zWJhLu1pzurTzPBueuN4fKHM=.html</a>
+<script
+  type="text/javascript">var _0xcaad = ["indexOf", "; path=/", "cookie", "=", "x-bni-ja", "stack", "phantomjs", "plugins", "length", "onmousemove"]; var err; function indexOfString(_0x1ce0x3, _0x1ce0x4) { return _0x1ce0x3[_0xcaad[0]](_0x1ce0x4) } try { null[0]() } catch (e) { err = e }; function setCookie(_0x1ce0x6) { var _0x1ce0x7 = 1225803625; var _0x1ce0x8 = 716129217; var _0x1ce0x9 = _0x1ce0x7 + _0x1ce0x8 + _0xcaad[1]; document[_0xcaad[2]] = _0x1ce0x6 + _0xcaad[3] + _0x1ce0x9 } function set_answer_cookie() { setCookie(_0xcaad[4]) } function set_answer_cookie_1() { set_answer_cookie() } if ((indexOfString(err[_0xcaad[5]], _0xcaad[6]) > -1) || (!(navigator[_0xcaad[7]] instanceof PluginArray) || navigator[_0xcaad[7]][_0xcaad[8]] == 0)) { } else { document[_0xcaad[9]] = set_answer_cookie_1() }</script>
+
+</html>
